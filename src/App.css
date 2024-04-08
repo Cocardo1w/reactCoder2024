@@ -38,7 +38,7 @@
 .material-symbols-outlined{
   color: #fff;
   font-size: 22px;
-  /* margin-right: 30px; */
+  
   padding-right: 0;
 }
 .nav-logo{
@@ -47,4 +47,35 @@
 }
 .nav-logo img{
   background-size: cover;
+}
+.section1{
+  display: grid;
+  place-items: center;
+}
+.container1{
+  display: grid;
+  grid-template-columns: repeat(3,minmax(300px,400px));
+  grid-template-rows: 600px; 
+  
+  margin-top: 20px;
+  /* padding-right: 20px; */
+}
+.container1 h1{
+  font-size: 30px;
+}
+.grid-item h3{
+  display: grid;
+  place-items: center;
+  color: #F2B3B9;
+  margin: 0.5em;
+}
+.grid-item button{
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  background-color: #F2B3B9;
+  color: #fff;
+  border: 2px solid #F2B3B9;
+  border-radius: 5px;
+  cursor: pointer;
 }
