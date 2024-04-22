@@ -6,7 +6,7 @@ const CartWidget = () => {
         <div>
             <li className="nav-li">
                 <a className="nav-a" href="#">Mi carrito</a>
-                <span class="material-symbols-outlined">shopping_cart</span>
+                <span className="material-symbols-outlined">shopping_cart</span>
             </li>
         </div>
     )
