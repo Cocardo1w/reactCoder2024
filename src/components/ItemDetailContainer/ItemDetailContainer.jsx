@@ -1,23 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import { getProducts } from '../../data/asincMock'
+import { useParams } from 'react-router-dom'
+import { getProductById } from '../../data/asincMock'
+import ItemDetail from '../ItemDetail/ItemDetail'
 
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState(null)
+    const [producto, setProducto] = useState({})
+    const { productid } = useParams()
 
     useEffect(() => {
-        getProductsById('1')
-        .then(response => {
-            setProduct(response)
-        })
-        .catch(error => {
-            console.error(error)
-        })
-    }, [])
+        getProductById(productid)
+        .then((prod) => setProducto(prod) )
+        .catch((error) => console.log(error)) 
+    }, [productid])
   return (
-    <div className='ItemDetailContainer'>
-        <ItemDetailContainer {...product} />
-    
+    <div >
+        
+    <ItemDetail {...producto} />
     </div>
   )
 }

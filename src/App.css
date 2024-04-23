@@ -44,6 +44,26 @@
 .nav-logo img{
   background-size: cover;
 }
+.nav-filtro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-filtro li{
+  list-style: none;
+}
+.nav-filtro a{
+  background: #f0f0f0;
+  padding: 10px;
+  text-decoration: none;
+  margin: 5px;
+  font-size: 18px;
+  color: #F2B3B9;
+}
+.nav-filtro a:hover{
+  background-color: rgba(237, 241, 7, 0.644);
+  color: #f0f0f0;
+}
 
 .container1{
   display: grid;
@@ -81,6 +101,10 @@
   border: 2px solid #F2B3B9;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.grid-item img{
+  width: 300px;
 }
 .item-count{
   display: flex;

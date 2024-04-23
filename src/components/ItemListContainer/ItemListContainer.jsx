@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { getProducts } from "../../data/asincMock";
+import { getProducts, GetProductsByCategory } from "../../data/asincMock";
+
 import ItemList from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
 
 
 const ItemListContainer = ({title}) => {
     const [products, setProducts] = useState([])
+    const {categoryid} = useParams()
     useEffect(() =>{
-        getProducts()
+
+        const dataProductos = categoryid ? GetProductsByCategory(categoryid) : getProducts()
+
+        dataProductos
         .then((el) => setProducts(el))
         .catch((error) => console.log(error))
-    }, [])
+    }, [categoryid])
 
 
     return(
         <div>{title}
-        <h3>Nuestras delicias</h3>
+        
+        
         <ItemList products={products} />
         </div>
     )
