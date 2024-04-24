@@ -38,7 +38,7 @@ export const productos = [
     {
         id: 5,
         "categoria": "Postre",
-        "nombre": "Almendrado",
+        "nombre": "ALMENDRADO",
         "imagen": "https://i.ibb.co/sgwsrPp/almedrado.jpg",
         "stock": 6,
         "descripcion": "Pasta hecha con almendras, harina y miel o azúcar.",
@@ -47,7 +47,7 @@ export const productos = [
     {
         id: 6,
         "categoria": "Postre",
-        "nombre": "Tricolor",
+        "nombre": "TRICOLOR",
         "imagen": "https://i.ibb.co/rb9Vp5M/se-trata-de-la-crema-helada-sabor-frutilla-vainilla-y-de-chocolate-marca-great-value-928338.jpg",
         "stock": 6,
         "descripcion": "El helado napolitano, es aquel que está compuesto por tres capas diferentes de helado, chocolate, vainilla y fresa; juntas y sin separación entre ellas.",
@@ -56,10 +56,10 @@ export const productos = [
     {
         id: 7,
         "categoria": "Postre",
-        "nombre": "Torta helada",
+        "nombre": "TORTA HELADA",
         "imagen": "https://i.ibb.co/tXY9h3P/torta-helada-2.jpg" ,
         "stock": 7,
-        "descripcion": "Torta helada con chocolate frutilla y vainilla recubierta con una capa de Chocolate Aguila",
+        "descripcion": "Torta helada con chocolate frutilla y vainilla recubierta  con una capa de Chocolate Aguila",
         "precio": "$15.000",
     },
     
