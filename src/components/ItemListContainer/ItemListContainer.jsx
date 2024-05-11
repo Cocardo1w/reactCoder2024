@@ -1,32 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { getProducts, GetProductsByCategory } from "../../data/asincMock";
 
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import { PuffLoader } from "react-spinners";
+import Context from "../../context/CartContext";
 
+const ItemListContainer = ({ title }) => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const { categoryid } = useParams();
 
-const ItemListContainer = ({title}) => {
-    const [products, setProducts] = useState([])
-    const {categoryid} = useParams()
-    useEffect(() =>{
+  // const { cart } = useContext(Context)
+  // console.log(cart)
 
-        const dataProductos = categoryid ? GetProductsByCategory(categoryid) : getProducts()
+  useEffect(() => {
+    setLoading(true);
+    const dataProductos = categoryid
+      ? GetProductsByCategory(categoryid)
+      : getProducts();
 
-        dataProductos
-        .then((el) => setProducts(el))
-        .catch((error) => console.log(error))
-    }, [categoryid])
+    dataProductos
+      .then((el) => setProducts(el))
+      .catch((error) => console.log(error))
+      .finally(() => setLoading(false));
+  }, [categoryid]);
 
-
-    return(
-        <div>
-            <div className="titulo">
-            {title}
-            </div>
-        
-        
-        <ItemList products={products} />
-        </div>
-    )
+  return (
+    <div>
+      <div className="titulo">
+        <h1>{title}</h1>
+        {loading ? (
+          <div className="spinner">
+            <PuffLoader className="spinner" color="#F2B3B9" />
+          </div>
+        ) : (
+          <ItemList products={products} />
+        )}
+      </div>
+    </div>
+  );
 };
-export default ItemListContainer
+export default ItemListContainer;

@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const PageNotFound = () => {
   return (
-    <img src={'https://i.ibb.co/QmtrFnY/404.png'} />
-  )
-}
+    <div className="PageNotFound">
+      <img src={"https://i.ibb.co/QmtrFnY/404.png"} />
+    </div>
+  );
+};
 
-export default PageNotFound
+export default PageNotFound;

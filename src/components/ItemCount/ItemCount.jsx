@@ -1,24 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import useCounter from "../../hooks/useCounter";
 
-const ItemCount = () => {
-    const [count, setCount] = useState(1)
+const ItemCount = ({ stock, initialValue, onAdd }) => {
+  const { count, incrementar, decrementar } = useCounter(initialValue, stock);
 
-    const stock = 5
-
-    const incrementar = () => {
-        count < stock && setCount(count+1)
-    }
-    const decrementar = () => {
-        count > 1 && setCount(count)
-        setCount(count - 1)
-    }
   return (
-    <div className='item-count'>
-        <button onClick={decrementar}>-</button>
-        <p>{count}</p>
-        <button onClick={incrementar}>+</button>
+    <div className="item-count">
+      <button onClick={decrementar}>-</button>
+      <p>{count}</p>
+      <button onClick={incrementar}>+</button>
+      <button onClick={() => onAdd(count)}>Agregar al carrito </button>
     </div>
-  )
-}
+  );
+};
 
-export default ItemCount
+export default ItemCount;
