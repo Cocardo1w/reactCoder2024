@@ -5,7 +5,9 @@ import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { PuffLoader } from "react-spinners";
 import Context from "../../context/CartContext";
+import {db} from "../../config/firebase"
 
+ 
 const ItemListContainer = ({ title }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -25,6 +27,7 @@ const ItemListContainer = ({ title }) => {
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
   }, [categoryid]);
+  
 
   return (
     <div>

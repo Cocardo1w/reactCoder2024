@@ -7,6 +7,7 @@ import NavBar from "./components/Navbar/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import { ContextProvider } from "./context/CartContext";
+import Sucursales from "./components/Sucursales/Sucursales";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             />
             <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<PageNotFound />} />
+            <Route path="/Sucursales" element={<Sucursales/>} title="Sucursales" />
           </Routes>
         </BrowserRouter>
       </ContextProvider>

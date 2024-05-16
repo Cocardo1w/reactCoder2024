@@ -2,6 +2,7 @@ import React from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import imagen from "../assets/logo2.jpg";
 import { Link } from "react-router-dom";
+import Sucursales from "../Sucursales/Sucursales";
 
 const NavBar = () => {
   return (
@@ -28,10 +29,10 @@ const NavBar = () => {
 
         <div className="nav-links">
           <li className="nav-li">
-            <Link className="nav-a">Sucursales</Link>
+            <Link to="/Sucursales" className="nav-a">Sucursales</Link>
           </li>
           <li className="nav-li">
-            <Link className="nav-a">Mi cuenta</Link>
+            <Link  className="nav-a">Mi cuenta</Link>
           </li>
 
           <CartWidget />

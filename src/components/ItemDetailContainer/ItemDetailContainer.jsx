@@ -14,6 +14,7 @@ const ItemDetailContainer = () => {
       .catch((error) => console.log(error))
       .finally(() => setLoading(false))
   }, [productid]);
+  console.log(producto)
   return (
     <div>
       <ItemDetail {...producto} />

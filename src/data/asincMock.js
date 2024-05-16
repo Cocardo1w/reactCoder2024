@@ -71,6 +71,38 @@ export const productos = [
   },
 ];
 
+export const sucursales = [
+  {
+    id:1,
+    barrio: "Belgrano",
+    direccion: "Av Cabildo 2044",
+    horario: "Lunes a Sabados de 9 a 20hs",
+    imagen: "https://i.ibb.co/5sxjrvb/belgrano.png" 
+    
+  },
+  {
+    id: 2,
+    barrio: "Villa Crespo",
+    direccion: "Av Corrientes 5350",
+    horario: "Lunes a Sabados de 9 a 21hs",
+    imagen:"https://i.ibb.co/1J7pSDV/vcresp.png"
+  },
+  {
+    id: 3,
+    barrio: "Flores",
+    direccion: "Av Rivadavia 7806",
+    horario: "Lunes a Sabados de 8 a 20hs",
+    imagen: "https://i.ibb.co/3ch49kp/flores.png"
+  },
+  {
+    id: 4,
+    barrio: "Villa del Parque",
+    direccion: "Av Cuenca 2538",
+    horario: "Lunes a Viernes de 10 a 18hs",
+    imagen:"https://i.ibb.co/kXZss3s/vparque.png" 
+  },
+];
+
 export const getProducts = () => {
   return new Promise((resolve) => {
     setTimeout(() => {

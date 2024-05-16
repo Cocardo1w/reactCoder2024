@@ -47,10 +47,10 @@
   font-size: 15px;
   border-radius: 50%;
   color: #f2b3b9;
-  width: 15px;
+  width: 20px;
 }
 .contadorProductos p {
-  margin-left: 3px;
+  margin-left: 5px;
 }
 .nav-logo {
   display: flex;
@@ -192,7 +192,7 @@
 .form{
   display: flex;
   justify-content: center;
-  height: 30vh;
+  height: auto;
   border: 2px solid black;
 }
 .form th, td{
@@ -216,6 +216,33 @@
 .cart h2{
   margin-bottom: 10px;
 }
+.sucursal{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+.sucursal-div{
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.sucursal-item{
+  display: flex;
+  margin-bottom: 20px;
+}
+.sucursal-texto{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.sucursal-texto h3, 
+.sucursal-texto h2,
+.sucursal-texto p{
+  margin-bottom: 25px;
+}
+
+
 
 @media screen and (max-width: 768px) {
   .container1 {
