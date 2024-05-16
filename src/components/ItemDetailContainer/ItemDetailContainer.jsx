@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProductById } from "../../data/asincMock";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../config/firebase";
 
 const ItemDetailContainer = () => {
   const [producto, setProducto] = useState({});
@@ -9,12 +11,21 @@ const ItemDetailContainer = () => {
   const { productid } = useParams();
 
   useEffect(() => {
-    getProductById(productid)
-      .then((prod) => setProducto(prod))
-      .catch((error) => console.log(error))
-      .finally(() => setLoading(false))
+    // getProductById(productid)
+      const getProduct = async() => {
+
+        const queryRef = doc(db, 'productos', productid)
+        const response = await getDoc(queryRef)
+        const newItem = {
+          ...response.data(),
+          id: response.id
+        }
+        setProducto(newItem)
+        setLoading(false)
+      }
+      getProduct()
   }, [productid]);
-  console.log(producto)
+  
   return (
     <div>
       <ItemDetail {...producto} />

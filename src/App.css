@@ -120,6 +120,11 @@
   color: #f2b3b9;
   margin: 0.5em;
 }
+
+/* .grid-item.detail > img {
+  width: 50%;
+  height: 50%;
+} */
 .items-compra button {
   display: grid;
   padding: 10px;
@@ -199,11 +204,28 @@
   border: 1px  solid black;
   padding: 8px;
 }
+.formulario{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+.formulario input{
+  width: 300px;
+  height: 20px;
+}
+.formulario button{
+  margin-top: 5px;
+}
 .boton-form{
   background: #f2b3b9;
   color: #fff;
   border: 2px solid #f2b3b9;
   padding: 5px;
+  text-decoration: none;
 }
 .cart{
   display: flex;

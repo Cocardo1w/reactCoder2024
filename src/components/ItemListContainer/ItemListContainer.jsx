@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { PuffLoader } from "react-spinners";
 import Context from "../../context/CartContext";
 import {db} from "../../config/firebase"
+import { collection, getDocs, query, where } from "firebase/firestore";
 
  
 const ItemListContainer = ({ title }) => {
@@ -17,16 +18,27 @@ const ItemListContainer = ({ title }) => {
   // console.log(cart)
 
   useEffect(() => {
-    setLoading(true);
-    const dataProductos = categoryid
-      ? GetProductsByCategory(categoryid)
-      : getProducts();
+    setLoading(true)
+    const getData = async () => {
+      const coleccion = collection(db, 'productos')
+      const queryRef = !categoryid ?
+      coleccion
+      :
+      query(coleccion, where('categoria', '==', categoryid))
+      const response = await getDocs(queryRef)
 
-    dataProductos
-      .then((el) => setProducts(el))
-      .catch((error) => console.log(error))
-      .finally(() => setLoading(false));
-  }, [categoryid]);
+      const productos = response.docs.map((doc) => {
+        const newItem = {
+          ...doc.data(),
+          id: doc.id 
+        }
+        return newItem
+      })
+      setProducts(productos)
+      setLoading(false)
+    }
+    getData()
+    }, [categoryid]);
   
 
   return (

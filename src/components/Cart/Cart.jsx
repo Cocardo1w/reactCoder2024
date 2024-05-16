@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { cart, getTotal, removeItem, clearCart } = useContext(Context);
-  console.log("cart", cart);
+  
   if (cart.length === 0) {
     return (
       <div className="cart" >
@@ -52,7 +52,7 @@ const Cart = () => {
               </button>
             </td>
             <td>
-              <button className="boton-form">Finalizar compra</button>
+              <Link to='/checkout' className="boton-form">Finalizar compra</Link>
             </td>
           </tr>
         </tbody>

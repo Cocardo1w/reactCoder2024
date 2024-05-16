@@ -1,39 +1,43 @@
+
 export const productos = [
   {
     id: 1,
     categoria: "Fit",
     nombre: "CHOCOLATE",
-    imagen: "https://i.ibb.co/jDLfV8G/cremademani.jpg",
+    imagen: "https://i.ibb.co/CVG5b0v/chocolate.png",
     stock: 5,
     descripcion:
       "100% artesanal, sin azúcar agregada. Bajo en calorías, 98 kcal por pote. Peso: 300gr.",
     precio: 3500,
   },
+ 
   {
     id: 2,
     categoria: "Fit",
     nombre: "FRUTILLA",
-    imagen: "https://i.ibb.co/jDLfV8G/cremademani.jpg",
+    imagen: "https://i.ibb.co/pKjxHs0/frutilla.png",
     stock: 5,
     descripcion:
       "100% artesanal, sin azúcar agregada. Bajo en calorías, 98 kcal por pote. Peso: 300gr.",
     precio: 3500,
   },
+  
   {
     id: 3,
     categoria: "Fit",
-    nombre: "DULCE DE LECHE",
-    imagen: "https://i.ibb.co/jDLfV8G/cremademani.jpg",
+    nombre: "LIMON",
+    imagen: "https://i.ibb.co/r28Sp14/limon.png",
     stock: 5,
     descripcion:
       "100% artesanal, sin azúcar agregada. Bajo en calorías, 98 kcal por pote. Peso: 300gr.",
     precio: 3500,
   },
+  // imagen: "https://i.ibb.co/jDLfV8G/cremademani.jpg",
   {
     id: 4,
     categoria: "Fit",
-    nombre: "VAINILLA",
-    imagen: "https://i.ibb.co/jDLfV8G/cremademani.jpg",
+    nombre: "DULCE DE LECHE",
+    imagen: "https://i.ibb.co/XSdx4KJ/dl.png",
     stock: 5,
     descripcion:
       "100% artesanal, sin azúcar agregada. Bajo en calorías, 98 kcal por pote. Peso: 300gr.",
