@@ -46,7 +46,7 @@ export const ContextProvider = ({ children }) => {
     })
     return total
   }
-  console.log(cart);
+  
 
   return (
     <Context.Provider
