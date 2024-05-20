@@ -1,5 +1,5 @@
 import { addDoc, collection, doc, getDoc, updateDoc } from "firebase/firestore";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { db } from "../../config/firebase";
 import Context from "../../context/CartContext";
 import Swal from "sweetalert2";
@@ -14,9 +14,30 @@ const Checkout = () => {
   });
   const [emailMatch, setEmailMatch] = useState(true);
   const [error, setError] = useState({});
+  const [stockAvailable, setStockAvailable] = useState(true);
 
   const { cart, getTotal, clearCart } = useContext(Context);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const checkStock = async () => {
+      for (const item of cart) {
+        const productRef = doc(db, "productos", item.id);
+        const productDoc = await getDoc(productRef);
+        if (productDoc.exists()) {
+          const currentStock = productDoc.data().stock;
+          if (currentStock < item.quantity) {
+            setStockAvailable(false);
+            break;
+          }
+        } else {
+          setStockAvailable(false);
+          break;
+        }
+      }
+    };
+    checkStock();
+  }, [cart]);
 
   const updateUser = (event) => {
     setUser((user) => ({
@@ -101,11 +122,10 @@ const Checkout = () => {
               icon: "error",
               confirmButtonText: "Ok",
             });
-            return; 
+            return;
           }
         }
 
-        
         for (const item of cart) {
           const productRef = doc(db, "productos", item.id);
           const productDoc = await getDoc(productRef);
@@ -131,7 +151,6 @@ const Checkout = () => {
           clearCart();
           navigate("/");
         });
-
       } catch (error) {
         console.log(error);
         Swal.fire({
@@ -146,7 +165,7 @@ const Checkout = () => {
 
   return (
     <div>
-      <h2 id="Checkout-h2" >Datos de facturación</h2>
+      <h2 id="Checkout-h2">Datos de facturación</h2>
       <table className="formulario">
         <tbody className="formulario">
           <tr className="formulario">
@@ -190,9 +209,9 @@ const Checkout = () => {
         </tbody>
       </table>
       <div className="boton-checkout">
-      <button onClick={getOrder} className="boton-form checkout">
-        Finalizar compra
-      </button>
+        <button onClick={getOrder} className="boton-form checkout">
+          Finalizar compra
+        </button>
       </div>
     </div>
   );

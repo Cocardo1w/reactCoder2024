@@ -1,4 +1,3 @@
-
 export const productos = [
   {
     id: 1,
@@ -10,7 +9,7 @@ export const productos = [
       "100% artesanal, sin azúcar agregada. Bajo en calorías, 98 kcal por pote. Peso: 300gr.",
     precio: 3500,
   },
- 
+
   {
     id: 2,
     categoria: "Fit",
@@ -21,7 +20,7 @@ export const productos = [
       "100% artesanal, sin azúcar agregada. Bajo en calorías, 98 kcal por pote. Peso: 300gr.",
     precio: 3500,
   },
-  
+
   {
     id: 3,
     categoria: "Fit",
@@ -32,7 +31,7 @@ export const productos = [
       "100% artesanal, sin azúcar agregada. Bajo en calorías, 98 kcal por pote. Peso: 300gr.",
     precio: 3500,
   },
-  // imagen: "https://i.ibb.co/jDLfV8G/cremademani.jpg",
+
   {
     id: 4,
     categoria: "Fit",
@@ -77,33 +76,32 @@ export const productos = [
 
 export const sucursales = [
   {
-    id:1,
+    id: 1,
     barrio: "Belgrano",
     direccion: "Av Cabildo 2044",
     horario: "Lunes a Sabados de 9 a 20hs",
-    imagen: "https://i.ibb.co/5sxjrvb/belgrano.png" 
-    
+    imagen: "https://i.ibb.co/5sxjrvb/belgrano.png",
   },
   {
     id: 2,
     barrio: "Villa Crespo",
     direccion: "Av Corrientes 5350",
     horario: "Lunes a Sabados de 9 a 21hs",
-    imagen:"https://i.ibb.co/1J7pSDV/vcresp.png"
+    imagen: "https://i.ibb.co/1J7pSDV/vcresp.png",
   },
   {
     id: 3,
     barrio: "Flores",
     direccion: "Av Rivadavia 7806",
     horario: "Lunes a Sabados de 8 a 20hs",
-    imagen: "https://i.ibb.co/3ch49kp/flores.png"
+    imagen: "https://i.ibb.co/3ch49kp/flores.png",
   },
   {
     id: 4,
     barrio: "Villa del Parque",
     direccion: "Av Cuenca 2538",
     horario: "Lunes a Viernes de 10 a 18hs",
-    imagen:"https://i.ibb.co/kXZss3s/vparque.png" 
+    imagen: "https://i.ibb.co/kXZss3s/vparque.png",
   },
 ];
 

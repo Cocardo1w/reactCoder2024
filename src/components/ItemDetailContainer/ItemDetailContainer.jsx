@@ -7,25 +7,23 @@ import { db } from "../../config/firebase";
 
 const ItemDetailContainer = () => {
   const [producto, setProducto] = useState({});
-  const [loading, setLoading ] = useState(true)
+  const [loading, setLoading] = useState(true);
   const { productid } = useParams();
 
   useEffect(() => {
-    // getProductById(productid)
-      const getProduct = async() => {
-
-        const queryRef = doc(db, 'productos', productid)
-        const response = await getDoc(queryRef)
-        const newItem = {
-          ...response.data(),
-          id: response.id
-        }
-        setProducto(newItem)
-        setLoading(false)
-      }
-      getProduct()
+    const getProduct = async () => {
+      const queryRef = doc(db, "productos", productid);
+      const response = await getDoc(queryRef);
+      const newItem = {
+        ...response.data(),
+        id: response.id,
+      };
+      setProducto(newItem);
+      setLoading(false);
+    };
+    getProduct();
   }, [productid]);
-  
+
   return (
     <div>
       <ItemDetail {...producto} />

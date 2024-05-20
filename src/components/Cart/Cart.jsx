@@ -55,7 +55,7 @@ const Cart = () => {
                   Vaciar carrito
                 </button> */}
                 <button className="boton-form" onClick={clearCart}>
-                Vaciar carrito
+                  Vaciar carrito
                 </button>
               </td>
               <td>

@@ -8,8 +8,8 @@ const CartWidget = () => {
   return (
     <div>
       <li className="nav-li">
-        <Link to='/cart'>
-        <span className="material-symbols-outlined">shopping_cart</span>
+        <Link to="/cart">
+          <span className="material-symbols-outlined">shopping_cart</span>
         </Link>
       </li>
       <div className="contadorProductos">

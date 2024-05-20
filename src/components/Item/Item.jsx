@@ -10,8 +10,7 @@ const Item = ({ nombre, precio, imagen, id }) => {
           <h3>{nombre}</h3>
           <img src={imagen} alt="" />
           <p>
-            <strong>Precio: </strong>
-            ${precio}
+            <strong>Precio: </strong>${precio}
           </p>
           <div className="items-compra">
             <button>
