@@ -51,16 +51,17 @@ const Cart = () => {
             <tr>
               <td>Total: ${getTotal()}</td>
               <td>
-                {/* <button className="boton-form" onClick={() => clearCart}>
-                  Vaciar carrito
-                </button> */}
+                
                 <button className="boton-form" onClick={clearCart}>
                   Vaciar carrito
                 </button>
               </td>
               <td>
-                <Link to="/checkout" className="boton-form">
+                <Link to="/checkout" >
+                  <button className="boton-form finalizar-compra">
+
                   Finalizar compra
+                  </button>
                 </Link>
               </td>
             </tr>

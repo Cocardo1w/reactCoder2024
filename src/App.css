@@ -35,8 +35,10 @@
 .material-symbols-outlined {
   color: #fff;
   font-size: 25px;
-  
   position: relative;
+}
+.material-symbols-outlined.icono-mercado{
+  display: none;
 }
 .contadorProductos {
   background-color: #fff;
@@ -235,6 +237,7 @@
   border: 2px solid #f2b3b9;
   padding: 5px;
   text-decoration: none;
+  cursor: pointer;
 }
 .boton-checkout{
     display: flex;
@@ -245,6 +248,7 @@
 .boton-form.checkout{
   padding: 15px;
 }
+
 
 .items-compra button.Boton-sin-stock{
   background-color: rgb(197, 46, 46);
@@ -324,6 +328,9 @@
     display: flex;
     flex-direction: column;
   }
+  .grid-item img {
+    width: 200px;
+  }
 }
 @media screen and (max-width: 480px) {
   .container1 {
@@ -340,4 +347,25 @@
     top:-84px;
     left: 13px;
   }
+  .nav-a {
+    display: none;
+  }
+  .material-symbols-outlined.icono-mercado{
+    display: block;
+    
+    
+  }
+  .link-icono-sucursal{
+    text-decoration: none;
+  }
+  
+  .grid-item img {
+    width: 150px;
+  }
+  .item-count button{
+    display: flex;
+    padding: 5px;
+  }
+  
 }
+

@@ -30,6 +30,7 @@ const NavBar = () => {
         <div className="nav-links">
           <li className="nav-li">
             <Link to="/Sucursales" className="nav-a">Sucursales</Link>
+            <Link className="link-icono-sucursal" to="/Sucursales"><span className="material-symbols-outlined icono-mercado">storefront</span></Link>
           </li>
           <CartWidget />
         </div>
